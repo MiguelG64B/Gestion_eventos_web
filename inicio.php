@@ -29,12 +29,21 @@ $query2 = mysqli_query($con, $sql2);
             <div class="col-md-3">
                 <h1>Insertar datos</h1>
                 <form action="./php/aggevento.php" method="POST">
-
+    
                     <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
                     <input type="date" class="form-control mb-3" name="fecha" placeholder="Fecha">
                     <input type="text" class="form-control mb-3" name="direccion" placeholder="Direccion">
-                    <input type="number" class="form-control mb-3" name="encargado" placeholder="Encargado">
 
+                    <select name="encargado" id="">
+                    <?php
+                        while ($row2 = mysqli_fetch_array($query2)) {
+                        ?>
+                    <option value="<?php echo $row2['id'] ?>"><?php echo $row2['nombre'] ?> <?php echo $row2['Apellido'] ?></option>
+                    <?php
+                        }
+                        ?>
+                    </select>
+    
                     <input type="submit" class="btn btn-primary">
                 </form>
             </div>
