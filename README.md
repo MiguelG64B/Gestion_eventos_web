@@ -30,6 +30,7 @@ y nos permite recibir los correo de manera local
 6. Ya puedes ver y probar las funciones del proyecto http://localhost/android/
 
 Como utlizar (Hosting):
+
 1.Descargar el zip 
 
 2.Insertar en el controlador de archivos
