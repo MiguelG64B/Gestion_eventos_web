@@ -29,11 +29,11 @@ $row = mysqli_fetch_array($query);
         <div class="container mt-5">
         <h2>Reporte al evento: <span class=" btn-warning"><?php echo $row['idevento']?></span></h2>
 
-        <form action="./php/reportes.php" method="POST">
+        <form action="./php/reportes.php" method="POST" REQUIRED>
             
             <input type="hidden" name="idevento" value="<?php echo $row['idevento']?>">
             
-            <input type="text" class="form-control mb-3" name="reporte" placeholder="Por favor cuentanos que paso...">
+            <input type="text" class="form-control mb-3" name="reporte" placeholder="Por favor cuentanos que paso..." REQUIRED>
 
             <input type="submit" class="btn btn-primary btn-block" value="Enviar reporte">
         </form>
