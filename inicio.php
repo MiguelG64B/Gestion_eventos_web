@@ -41,15 +41,15 @@ $query3 = mysqli_query($con, $sql3);
 
             <div class="col-md-3">
                 <h1>Insertar datos</h1>
-                <form action="./php/aggevento.php" method="POST" enctype="multipart/form-data">
+                <form action="./php/aggevento.php" method="POST" enctype="multipart/form-data" REQUIRED>
     
-                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre evento">
-                    <input type="number" class="form-control mb-3" name="costo" placeholder="Costo">
-                    <input type="number" class="form-control mb-3" name="cupo" placeholder="Cupo">
-                    <input type="datetime-local" class="form-control mb-3" name="fecha" placeholder="Fecha">
-                    <input type="text" class="form-control mb-3" name="direccion" placeholder="Direccion">
+                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre evento" REQUIRED>
+                    <input type="number" class="form-control mb-3" name="costo" placeholder="Costo" REQUIRED>
+                    <input type="number" class="form-control mb-3" name="cupo" placeholder="Cupo" REQUIRED>
+                    <input type="datetime-local" class="form-control mb-3" name="fecha" placeholder="Fecha" REQUIRED>
+                    <input type="text" class="form-control mb-3" name="direccion" placeholder="Direccion" REQUIRED>
 
-                    <input type="file" name="imagen" id="imagen">
+                    <input type="file" name="imagen" id="imagen" REQUIRED>
 
                     <select name="encargado" id="">
                     <?php
@@ -78,6 +78,7 @@ $query3 = mysqli_query($con, $sql3);
                             <th>Imagen</th>
                             <th>Fecha</th>
                             <th></th>
+                             <th></th>
                         </tr>
                     </thead>
 
@@ -94,7 +95,8 @@ $query3 = mysqli_query($con, $sql3);
                                 <th><?php echo $row['direccion'] ?></th>
                                 <th><img src="<?php echo $row['imagen'] ?>" height="100px" width="100px"></th>
                                 <th><?php echo $row['fecha'] ?></th>
-                                <th><a href="./edivento.php?id=<?php echo $row['idevento'] ?>" class="btn btn-info">Editar</a></th>
+                                <th><a href="./edivento.php?id=<?php echo $row['idevento'] ?>" class="btn btn-info">Editar evento</a></th>
+                                 <th><a href="./php/correo_recordartorio.php?id=<?php echo $row['idevento'] ?>" class="btn btn-info">Enviar recordatorio</a></th>
                             </tr>
                         <?php
                         }
