@@ -33,7 +33,7 @@ Papelcut ahorra el proceso de configurar el mercury mail
 y nos permite recibir los correo de manera local
 
 4. Activa el xampp y crea una nueva base de datos con el nombre "parical3" en phpMyAdmin http://localhost/phpmyadmin/
-5. Importa el documento sql llamado "proyectouni1.sql" que se encuentra en el mismo proyecto 
+5. Importa el documento sql llamado "parcial3.sql" que se encuentra en el mismo proyecto 
 6. Ya puedes ver y probar las funciones del proyecto http://localhost/android/
 
 Como utlizar (Hosting):
