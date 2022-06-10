@@ -2,35 +2,32 @@
 include 'conn.php';
 
 $id_u =$_GET['id'];
+
+
 $con = conectar();
 $sql = "SELECT * FROM eventos WHERE idevento ='$id_u'";
-
-
 $query = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($query);
 
 
-$consulta="SELECT COUNT(*) FROM asistencia WHERE idevento ='$id_u'";
+$cedula=$row['idtipousuario'];
 
+$consulta = "SELECT * FROM usuario WHERE cedula ='$cedula'";
 $query2 = mysqli_query($con, $consulta);
 $row2 = mysqli_fetch_array($query2);
-echo $row2['correo'];
 
-
-for($i=0; $i< count($arraycorreos); $i++){
-
-    $to= $arraycorreos;
+    $to= $row2['correo'];
     $subject = 'Recuerda que tienes un evento';
-	$from = 'info@xyz.com';
+	$from = 'info@neutroshorty.xyz';
 	$header = 'MIME-Version 1.0'."\r\n";
 	$header.="Content-type: text/html; charset=iso-8859-1\r\n";
 	//$header.="X-Mailer: PHP/".phpversion();//esto me genera error
-    $header.= 'From: info@xyz.com'."\r\n";
+    $header.= 'From: info@neutroshorty.xyz'."\r\n";
 	
 $message='<html>
 <body>
 	<h1 style="color:#1d1d1d">Recordatorio del evento</h1>
-	<p>Recuerda que tienes que guardar tu codigo QR para poder marcar asistencia</p>
+	<p>Recuerda que tienes un evento</p>
 	<h3>Detalles</h3>
 	<table>
 		<thead>
@@ -50,7 +47,7 @@ $message='<html>
     $message.='<h2></h2> 
 	 </body>
 	 </html>';
-}
+
 
 if(mail($to, $subject, $message, $header)){
 	
