@@ -11,8 +11,11 @@ Año: 2022
 
 Integrantes: 
 EDGAR MIGUEL BERMUDES HERNANDEZ
+
 CRISTIAN GIOVANNI JAIMES DIAZ
+
 DANIEL ROMARIO JAIMES BAUTISTA
+
 YEINTON ALEXANDER PEREZ GODOY
 
 
@@ -45,7 +48,7 @@ Como utlizar (Hosting):
 
 3.Configurar archivo correo_recordartorio.php en la linea 24 y 28 "$from = 'correo@dominio.com'"
 
-4. Ya puedes ver y probar las funciones del proyecto http://dominio.com/
+4.Ya puedes ver y probar las funciones del proyecto en tu domino
 
 
 Prueba montado en un hosting 
