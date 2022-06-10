@@ -63,7 +63,6 @@ $query = mysqli_query($con, $sql);
                                 <th><img src="<?php echo $row['imagen'] ?>" height="100px" width="100px"></th>
                                 <th><?php echo $row['fecha'] ?></th>
                                 <th><a href="./reportes.php?id=<?php echo $row['idevento'] ?>" class="btn btn-warning">Realizar reportar</a></th>
-                                <th><a href="./php/correo_recordartorio.php?id=<?php echo $row['idevento'] ?>" class="btn btn-info">Enviar recordatorio</a></th>
                             </tr>
                         <?php
                         }
